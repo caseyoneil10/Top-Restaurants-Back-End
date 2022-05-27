@@ -4,6 +4,8 @@ const db = mongoose.connection;
 const express = require ('express');
 const app = express ();
 
+require("dotenv").config()
+
 // Connect to Mongo
 mongoose.connect(MONGODB_URI, () => {
     console.log('whatever')
