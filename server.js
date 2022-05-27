@@ -1,6 +1,8 @@
 const MONGODB_URI  = process.env.MONGODB_URI
 const mongoose = require ('mongoose');
 const db = mongoose.connection;
+const express = require ('express');
+const app = express ();
 
 // Connect to Mongo
 mongoose.connect(MONGODB_URI, () => {
