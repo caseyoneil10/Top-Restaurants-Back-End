@@ -119,4 +119,8 @@ yarn-debug.log*
 !/storage/.keep
 
 # Push timer
+<<<<<<< HEAD
 push_timer.sh
+=======
+push_timer.sh
+>>>>>>> 15f40ecc48f34b06ed12e7ab07fdd12ac43518cb

@@ -10,7 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/caseyoneil10/back-end-project3.git"
   },
+<<<<<<< HEAD
   "keywords": [],
+=======
+>>>>>>> 15f40ecc48f34b06ed12e7ab07fdd12ac43518cb
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,7 +22,10 @@
   "homepage": "https://github.com/caseyoneil10/back-end-project3#readme",
   "dependencies": {
     "cors": "^2.8.5",
+<<<<<<< HEAD
     "dotenv": "^16.0.1",
+=======
+>>>>>>> 15f40ecc48f34b06ed12e7ab07fdd12ac43518cb
     "express": "^4.18.1",
     "mongoose": "^6.3.4"
   }
