@@ -8,6 +8,7 @@ const restaurantSchema = new mongoose.Schema({
     image: String,
     hours: String,
     rank: Number,
+    show: Boolean,
 })
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);

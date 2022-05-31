@@ -18,7 +18,8 @@ app.post('/restaurants',(req, res) => {
 })
 
 app.get('/restaurants', (req, res) => {
-  Restaurant.find({}, (err, foundRestaurant) => {
+  Restaurant.find({
+  }).collation({'locale':'en'}).sort('rank').exec((err, foundRestaurant) => {
       res.json(foundRestaurant)
   })
 })
