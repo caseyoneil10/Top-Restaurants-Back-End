@@ -4,6 +4,8 @@ const db = mongoose.connection;
 const express = require ('express');
 const app = express ();
 
+const PORT = process.env.PORT || 3003;
+
 require("dotenv").config()
 
 app.get("/", (req, res) => {
@@ -14,6 +16,8 @@ app.get("/", (req, res) => {
 mongoose.connect(MONGODB_URI, () => {
     console.log('whatever')
 })
+
+app.listen(PORT, () => console.log( 'Listening on port:', PORT));
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
