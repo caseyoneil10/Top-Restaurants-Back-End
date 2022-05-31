@@ -7,7 +7,7 @@ const app = express ();
 require("dotenv").config()
 
 app.get("/", (req, res) => {
-    res.json("Hello World");
+    res.send("Hello World");
   });
 
 // Connect to Mongo
