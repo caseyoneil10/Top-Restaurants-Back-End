@@ -4,9 +4,8 @@ const restaurantSchema = new mongoose.Schema({
     name: String,
     address: String,
     type: String,
-    price: Number,
+    chef: String,
     image: String,
-    hours: String,
     rank: Number,
     show: Boolean,
 })
