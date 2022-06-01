@@ -14,6 +14,7 @@ app.use(cors());
 app.post('/restaurants',(req, res) => {
   Restaurant.create(req.body, (err, createdRestaurant) => {
       res.json(createdRestaurant)
+      console.log(err);
   })
 })
 

@@ -6,7 +6,7 @@ const restaurantSchema = new mongoose.Schema({
     type: String,
     chef: String,
     image: String,
-    rank: Number,
+    rank: {type: Number, unique: true, message: 'Rank must be Unique'},
     show: Boolean,
 })
 
