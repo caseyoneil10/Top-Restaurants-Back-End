@@ -11,7 +11,8 @@ const restaurantSchema = new mongoose.Schema({
 		unique: true,
 	},
 	show: Boolean,
-	website: String
+	website: String,
+	showMap: Boolean,
 })
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
