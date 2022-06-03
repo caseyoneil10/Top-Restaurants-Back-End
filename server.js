@@ -13,10 +13,13 @@ app.use(cors());
 // Routes
 app.post('/restaurants', (req, res) => {
 	Restaurant.create(req.body, (err, createdRestaurant) => {
-		res.json(createdRestaurant)
+		if (err) {
+			res.json(`The 'Rank' Input Field Must Be Unique. A Restaurant With a Rank of ${req.body.rank} Already Exists. Try Again!`)
+		} else {
+		res.json(createdRestaurant)}
 	})
 })
-
+// "The `Rank` Input Field Must Be Unique, Try Again!"
 app.get('/restaurants', (req, res) => {
 	Restaurant.find({}).collation({
 		'locale': 'en'
