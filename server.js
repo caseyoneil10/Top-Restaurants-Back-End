@@ -19,7 +19,7 @@ app.post('/restaurants', (req, res) => {
 		res.json(createdRestaurant)}
 	})
 })
-// "The `Rank` Input Field Must Be Unique, Try Again!"
+
 app.get('/restaurants', (req, res) => {
 	Restaurant.find({}).collation({
 		'locale': 'en'
