@@ -10,7 +10,10 @@ require("dotenv").config()
 app.use(express.json());
 app.use(cors());
 
-// Routes
+//Routes
+//Create Route
+//If statement if the user fails schema validation a custom json message is sent to the front end.
+//Else create a new restaurant.
 app.post('/restaurants', (req, res) => {
 	Restaurant.create(req.body, (err, createdRestaurant) => {
 		if (err) {
@@ -19,7 +22,9 @@ app.post('/restaurants', (req, res) => {
 		res.json(createdRestaurant)}
 	})
 })
-
+//Get route
+//Sort the data based on the key value rank, which in this case is a number.
+//collation "locale" is not really neccesary but if we sorted by name of restaurant it is neccesary to avoid case sensitive sorting issues.
 app.get('/restaurants', (req, res) => {
 	Restaurant.find({}).collation({
 		'locale': 'en'
@@ -27,13 +32,13 @@ app.get('/restaurants', (req, res) => {
 		res.json(foundRestaurant)
 	})
 })
-
+//delete route
 app.delete('/restaurants/:id', (req, res) => {
 	Restaurant.findByIdAndRemove(req.params.id, (err, deletedResaurant) => {
 		res.json(deletedResaurant)
 	})
 })
-
+//edit route
 app.put('/restaurants/:id', (req, res) => {
 	Restaurant.findByIdAndUpdate(req.params.id, req.body, {
 		new: true
@@ -41,7 +46,7 @@ app.put('/restaurants/:id', (req, res) => {
 		res.json(updatedRestaurant)
 	})
 })
-
+//find correct MONGODB and PORT route in our ENV file.
 const PORT = process.env.PORT || 3003;
 const MONGODB_URI = process.env.MONGODB_URI
 const mongoURI = "mongodb://localhost:27017/"
